@@ -37,7 +37,7 @@
                         <td><button onclick='alertUser(<?php echo $contacts[$index]->contactID  ?>)' class="btn btn-dnager">Delete</button></td>
                     </tr>
                     <?php
-                        }
+                    }
                     ?>        
                 </tbody>
             </table>
