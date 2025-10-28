@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -32,6 +33,8 @@
                         <td><?php echo $contacts[$index]->contactID ?></td>
                         <td><?php echo $contacts[$index]->username ?></td>
                         <td><?php echo $contacts[$index]->email ?></td>
+                        <td><a href='contactUpdateController.php?id=<?php echo $contacts[$index]->contactID?>&user=<?php echo $contacts[$index]->username?>&email=<?php echo $contacts[$index]->email?>'><button class="btn btn-dnager">Update</button></a></td>
+                        <td><button onclick='alertUser(<?php echo $contacts[$index]->contactID  ?>)' class="btn btn-dnager">Delete</button></td>
                     </tr>
                     <?php
                         }
@@ -40,8 +43,15 @@
             </table>
         </div>
 
-
-
+        <script>
+            function alertUser(id) {
+                if(confirm("Would you like to delete this user")){
+                    window.location.href = "contactDeleteController.php?id=" + id;
+                } else {
+                    console.log("didn't work?");
+                }
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
